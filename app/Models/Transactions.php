@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Transactions extends Model
 {
-    protected $fillable = [ 'value', 'name', 'happened_at' ];
+    protected $fillable = [ 'value', 'name', 'happened_at', 'spent' ];
 
     use HasFactory;
 
