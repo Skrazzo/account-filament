@@ -13,10 +13,9 @@ return new class extends Migration
     {
         Schema::create('transactions', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('account_id')->constrained();
-            $table->float('value');
+            $table->foreignId('account_id')->constrained()->cascadeOnDelete();
+            $table->decimal('value', 2);
             $table->string('name', 30)->nullable();
-            $table->boolean('spent')->default(true);
             $table->date('happened_at')->default(now());
             $table->timestamps();
         });

@@ -27,5 +27,10 @@ class DatabaseSeeder extends Seeder
             'email' => 'test@s.com',
             'password' => 'labdien'
         ]);
+
+        \App\Models\Account::factory(2)
+            ->has(\App\Models\Transactions::factory(100))
+            ->create();
+        
     }
 }

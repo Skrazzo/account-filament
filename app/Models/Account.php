@@ -33,4 +33,12 @@ class Account extends Model
             }
         });
     }
+
+    protected $appends = [
+        'transaction_sum',
+    ];
+
+    function getTransactionSumAttribute(){
+        return $this->transaction()->sum('value');
+    }
 }
