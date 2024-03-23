@@ -43,7 +43,8 @@ class AccountResource extends Resource
                     ->sortable()
                     ->size('large')
                     ->money('eur')
-                    ->weight('black'),
+                    ->weight('black')
+                    ->color('primary'),
                 TextColumn::make('created_at')
                     ->dateTime()
                     ->sortable()
