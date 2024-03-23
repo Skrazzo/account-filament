@@ -29,7 +29,7 @@ class DatabaseSeeder extends Seeder
         ]);
 
         \App\Models\Account::factory(2)
-            ->has(\App\Models\Transactions::factory(100))
+            ->has(\App\Models\Transactions::factory(20))
             ->create();
         
     }

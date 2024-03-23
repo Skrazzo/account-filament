@@ -18,7 +18,7 @@ class TransactionsFactory extends Factory
     {
         return [
             'value' => fake()->numberBetween(-500,1000),
-            'happened_at' => fake()->dateTimeBetween('-1 week', '+1 week')
+            'happened_at' => fake()->dateTimeBetween('-5 week', '+0 week')
         ];
     }
 }

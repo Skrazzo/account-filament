@@ -7,6 +7,7 @@ use Filament\Forms\Components\DatePicker;
 use Filament\Forms\Components\Radio;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Form;
+use Filament\Resources\Components\Tab;
 use Filament\Resources\RelationManagers\RelationManager;
 use Filament\Tables;
 use Filament\Tables\Columns\Summarizers\Sum;
@@ -112,5 +113,15 @@ class TransactionRelationManager extends RelationManager
                     Tables\Actions\DeleteBulkAction::make(),
                 ]),
             ]);
+    }
+
+    public function getTabs(): array{
+        return [
+            'All' => Tab::make(),
+            'This week' => Tab::make()
+                ->modifyQueryUsing(fn (Builder $query) => $query->where('happened_at', '>=', now()->startOfWeek())),
+            'This month' => Tab::make()
+                ->modifyQueryUsing(fn (Builder $query) => $query->where('happened_at', '>=', now()->startOfMonth())),
+        ];
     }
 }
