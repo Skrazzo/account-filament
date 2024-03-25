@@ -29,7 +29,6 @@ class TransactionRelationManager extends RelationManager
                 TextInput::make('value')
                     ->placeholder('5')
                     ->required()
-                    ->numeric()
                     ->suffix('EUR'),
                 Radio::make('spent')
                     ->label('Did you spend this money?')
